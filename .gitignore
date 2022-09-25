@@ -8,3 +8,9 @@ train.bat
 logs
 gen.bat
 gen_ref.bat
+
+inputs/*
+reg_inputs/*
+outputs/`
+pretrained_ckpt/*
+*.ipynb_checkpoints/*
