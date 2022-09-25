@@ -2,6 +2,7 @@ import argparse, os, sys, datetime, glob, importlib, csv, gc
 import numpy as np
 import time
 import torch
+import warnings
 
 import torchvision
 import pytorch_lightning as pl
@@ -21,6 +22,9 @@ from pytorch_lightning.utilities import rank_zero_info
 
 from ldm.data.base import Txt2ImgIterableBaseDataset
 from ldm.util import instantiate_from_config
+
+warnings.resetwarnings()
+warnings.simplefilter('ignore', DeprecationWarning)
 
 def load_model_from_config(config, ckpt, verbose=False):
     print(f"Loading model from {ckpt}")
